@@ -45,7 +45,8 @@
       "hardenedRuntime": true,
       "entitlements": "assets/entitlements.mac.plist",
       "entitlementsInherit": "assets/entitlements.mac.plist",
-      "gatekeeperAssess": false
+      "gatekeeperAssess": false,
+      "extendInfo": "assets/info.mac.plist"
     },
     "dmg": {
       "contents": [
@@ -177,8 +178,10 @@
     "@types/history": "4.7.8",
     "@types/jest": "^26.0.24",
     "@types/node": "15.0.2",
+    "@types/node-fetch": "^3.0.3",
     "@types/react": "^17.0.9",
     "@types/react-dom": "^17.0.9",
+    "@types/react-phone-number-input": "^3.0.10",
     "@types/react-router": "^5.1.14",
     "@types/react-router-dom": "^5.1.6",
     "@types/react-test-renderer": "^17.0.1",
@@ -247,12 +250,15 @@
   },
   "dependencies": {
     "electron-debug": "^3.2.0",
-    "electron-log": "^4.3.5",
+    "electron-log": "^4.4.1",
     "electron-updater": "^4.3.8",
     "history": "4.x.x",
+    "node-fetch": "^2.6.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-phone-number-input": "^3.1.25",
     "react-router-dom": "^5.2.0",
+    "react-toastify": "^6.2.0",
     "regenerator-runtime": "^0.13.5"
   },
   "devEngines": {
@@ -279,7 +285,7 @@
     ],
     "singleQuote": true
   },
-  "husky": {
+  "husky_not_used": {
     "hooks": {
       "pre-commit": "lint-staged"
     }

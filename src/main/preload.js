@@ -6,7 +6,7 @@ contextBridge.exposeInMainWorld('electron', {
       ipcRenderer.send('ipc-example', 'ping');
     },
     on(channel, func) {
-      const validChannels = ['ipc-example'];
+      const validChannels = ['ipc-example', 'url-action', 'geoIpCountryCode'];
       if (validChannels.includes(channel)) {
         // Deliberately strip event as it includes `sender`
         ipcRenderer.on(channel, (event, ...args) => func(...args));
@@ -19,5 +19,12 @@ contextBridge.exposeInMainWorld('electron', {
         ipcRenderer.once(channel, (event, ...args) => func(...args));
       }
     },
+    removeListener(channel, func) {
+      ipcRenderer.removeListener(channel, func);
+    },
+    sendEnvelope(...args) {
+      const p = ipcRenderer.invoke('sendEnvelope', ...args);
+      return p;
+    }
   },
 });

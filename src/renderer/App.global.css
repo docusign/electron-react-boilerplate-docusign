@@ -2,6 +2,12 @@
  * @NOTE: Prepend a `~` to css file paths that are in your node_modules
  *        See https://github.com/webpack-contrib/sass-loader#imports
  */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+#root {
+  width: 100%;
+}
+
 body {
   position: relative;
   color: white;
@@ -12,16 +18,54 @@ body {
     #dd5789 51.77%,
     #7a2c9e 129.35%
   );
-  font-family: sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   overflow-y: hidden;
   display: flex;
+}
+
+section#topNav {
+  height: 3em;
+}
+
+section.welcome {
   justify-content: center;
   align-items: center;
+  display: flex;
+}
+
+.mtop15 {
+  margin-top: 15%;
+}
+
+.mtop {
+  margin-top: 4em;
+}
+
+.mr {
+  margin-right: .5em;
+}
+
+.reg {
+  margin: 6em 2em;
+}
+
+h1, h2, h3, p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  letter-spacing: -0.025em;
+  color: #fff;
 }
 
 button {
   background-color: white;
   padding: 10px 20px;
+  margin: 10px;
   border-radius: 10px;
   border: none;
   appearance: none;
@@ -29,11 +73,15 @@ button {
   box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
     0px 18px 88px -4px rgba(24, 39, 75, 0.14);
   transition: transform ease-in 0.1s;
-  cursor: pointer;
+  user-select: none;
 }
 
 button:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
+}
+
+p {
+  font-size: 14px;
 }
 
 li {
@@ -41,15 +89,15 @@ li {
 }
 
 a {
+  color: white;
+  opacity: 0.75;
   text-decoration: none;
-  height: fit-content;
-  width: fit-content;
-  margin: 10px;
 }
 
 a:hover {
   opacity: 1;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .Hello {
@@ -58,3 +106,78 @@ a:hover {
   align-items: center;
   margin: 20px 0;
 }
+
+.accountInfo {
+  /* position: absolute; */
+  /* top: 2em; */
+  font-size: 14px;
+}
+
+.accountInfo p {
+  margin: 0;
+}
+
+.accountInfo span.a, .smallA {
+  font-variant: small-caps;
+  text-decoration: underline;
+}
+
+label {
+  display: block;
+  margin-bottom: .7em;
+}
+
+input {
+  margin-left: 1em;
+  width: 15em;
+}
+
+input[type="tel"] {
+  flex: none;
+}
+
+:root {
+  --PhoneInputCountryFlag-height: 2em;
+}
+
+#feedback {
+  position: absolute;
+  top: .8em;
+  left: 32em;
+}
+
+#feedback p {
+  font-size: 18px;
+}
+
+/* From http://tobiasahlin.com/spinkit/ */
+.spinner {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  margin: 0px 0px 15px 0px;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+  } 50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+  } 100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+@import '~react-toastify/dist/ReactToastify.css';
+@import '~react-phone-number-input/style.css';

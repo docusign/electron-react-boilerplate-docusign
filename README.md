@@ -2,12 +2,12 @@
 
 <img src=".erb/img/screenshot.png" width="100%" style="margin-top:2em;margin-bottom:2em;"/>
 
-This repo is a fork of the [electron-react-boilerplate](https://github.com/electron-react-boilerplate/electron-react-boilerplate) project
+This repo is a fork of the [electron-react-boilerplate](https://github.com/electron-react-boilerplate/electron-react-boilerplate) project, version 3.0.2,
 with the addition of OAuth Implicit grant support
 and a DocuSign eSignature API example.
 
 This repo is the source code for the DocuSign Developer blog post 
-**Electron React with Implicit Grant**
+**[Electron React apps with Implicit Grant](https://www.docusign.com/blog/developers/electron-react-apps-implicit-grant)**
 
 ## Installation
 
@@ -95,7 +95,19 @@ for more information.
 
 ### More information
 More information is available from the default ReadMe (below) and
-from the Electron documentation
+from the Electron documentation.
+
+## Maintenance and Pull Requests
+This repo is provided for use with the blog post 
+and is not actively maintained. 
+
+Pull Requests are welcomed if they use the MIT License. 
+
+To use the most recent version of the electron-react boilerplate repo,
+port the 
+[OAuth and DocuSign commits](https://github.com/docusign/electron-react-boilerplate-docusign/commit/baef83879aadc7a6e02043c711191c5023b3f6b3)
+to the current version
+of the boilerplate repo.
 
 <hr />
 <hr />
